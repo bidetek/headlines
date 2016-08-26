@@ -6,10 +6,14 @@
 <body>
 
 	<h1>Titulares</h1>
+	<form>
+		<input type="text" name="publication" placeholder="buscar" />
+		<input type="submit" value="publication" />
+	</form>
 	{% for article in articles %}
 		<b><a href="{{ article.link }}"> {{article.title}}</a></b><br />
 		<i>{{article.published}}</i><br />
-		<p>{{article.summary}}</p>
+		<p>{{article.summary|safe}}</p>
 		<hr />
 	{% endfor %}
 </body>
